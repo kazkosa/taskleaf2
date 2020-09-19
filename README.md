@@ -111,7 +111,7 @@ bundle exec rspec
 |name|string|null: false, unique: true, index: true|
 |email|string|null: false, unique: true, index: true|
 |password|string|null: false|
-|admin_role|integer|null:false|
+|admin_level|integer|null:false|
 
 Association
 - has_many :
