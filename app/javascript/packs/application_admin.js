@@ -19,7 +19,7 @@ const imagePath = (name) => images(name, true)
 // require("jquery");
 require('jquery-ui-dist/jquery-ui');
 
-import '../stylesheets/application';
+import '../stylesheets/application_admin';
 import '../javascripts/application';
 
 

@@ -1,3 +1,6 @@
+// import 'bootstrap';
+// import "../javascripts/user.js";
+// import "../stylesheets/user.scss";
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -8,7 +11,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -16,19 +18,20 @@ require("channels")
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
 
-// require("jquery");
-require('jquery-ui-dist/jquery-ui');
 
-import '../stylesheets/application';
-import '../javascripts/application';
+// CSS
+import '../stylesheets/reset';
+import '../stylesheets/login';
 
+// JS
+//  Materialize
+import "materialize-css/dist/js/materialize.min.js";
+$(function(){
 
-// Bootstrap
-import 'bootstrap';
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  $('[data-toggle="popover"]').popover();
-})
+  //materializeで使うdropdownの初期化。option設定も可能。
+  $('.dropdown-button').dropdown();
 
-// Fontawesome
-import '@fortawesome/fontawesome-free/js/all';
+  // class'show'をdiv要素に追加
+  $('.login-container').addClass('show');
+
+});
