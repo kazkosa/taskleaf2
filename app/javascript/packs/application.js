@@ -13,5 +13,22 @@ require("channels")
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+const images = require.context('../images', true)
+const imagePath = (name) => images(name, true)
+
+// require("jquery");
+require('jquery-ui-dist/jquery-ui');
+
+import '../stylesheets/application';
+import '../javascripts/application';
+
+
+// Bootstrap
+import 'bootstrap';
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
+})
+
+// Fontawesome
+import '@fortawesome/fontawesome-free/js/all';

@@ -1,0 +1,71 @@
+html{
+  height:100%;
+}
+body{
+  width:100%; 
+}
+section{
+  width:100%;
+  height:100%;
+}
+p{
+  font-size:24px;
+}
+
+.card-panel.login-container{
+  font-family: "Gill Sans", sans-serif;
+  opacity: 1;
+  transition: 0s;
+  min-width:320px;
+  width:100%;
+  margin:0px;
+  padding:10px;
+  box-shadow:none;
+}
+.card-panel.login-container.show{
+  opacity: 1;
+  margin:0px;
+}
+.login_btn.waves-effect{
+  display:block;
+  color:#FFF;
+}
+.row_a{
+  padding-left:0;
+  padding-right:0;
+}
+
+@media screen and (min-width:480px) { 
+  /*　画面サイズが480pxからはここを読み込む　*/
+  body{
+    
+    background-image: url("../images/login/19936.jpg");
+    background-size:contain;
+    background-position: center;
+    background-repeat  : no-repeat;
+  }
+  .card-panel.login-container{
+    opacity: 0;
+    transition: 1.0s;
+    min-width:320px;
+    width:70%;
+    margin:20px auto 50px;
+    padding:20px;
+    box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  .card-panel.login-container.show{
+    opacity: 0.9;
+    margin:50px auto 50px;
+  }
+
+}
+
+@media screen and (min-width:768px) {
+  .card-panel.login-container{
+    min-width:320px;
+    width:50%;
+    margin:100px auto 50px;
+    padding:20px;
+  }
+}
