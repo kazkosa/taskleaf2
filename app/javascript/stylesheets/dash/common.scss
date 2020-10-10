@@ -1,0 +1,53 @@
+.img-circle{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+}
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:block;
+  margin:10px auto;
+  color:white;
+  line-height:50px;
+}
+.todolist-title{
+  padding-top:10px;
+  padding-left:10px;
+}
+.btn2{
+  padding:1px 6px;
+}
+
+.sidebar-inner{
+  display:flex;
+  height:100%;
+}
+.sidebar-menu2{
+  width:40px;
+  margin: 0px 0 0 0;
+  background:#444444;
+  padding-top:80px;
+}
+.sidebar-menu2 .sidebar-wsmenu{
+  display:flex;
+  flex-flow:column;
+  margin:0;
+  padding:0;
+}
+.sidebar-wsmenu .tab{
+  display: block;
+    height: 38px;
+    background: #2f323a;
+    margin: 1px auto;
+    border-radius: 45%;
+    width: 38px;
+    text-align:center;
+}
+.sidebar-wsmenu .tab a{
+  text-align:center;
+  color:#aeb2b7;
+  line-height:38px;
+  width:100%;
+}
