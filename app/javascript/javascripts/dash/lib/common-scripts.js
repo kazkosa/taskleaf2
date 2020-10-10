@@ -12,14 +12,12 @@ $(function() {
     classExpand: 'dcjq-current-parent'
   });
 });
-console.log("Hello World");
 
 //var Script = function() {
 $(function() {
 
   //    sidebar dropdown menu auto scrolling
   $(document).on('click','#sidebar .sub-menu > a',function(){
-    console.log("Hello World");
     var o = ($(this).offset());
     diff = 250 - o.top;
     if (diff > 0)
