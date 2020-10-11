@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: taskleaf2_production
-  username: taskleaf2
-  password: <%= ENV['TASKLEAF2_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
