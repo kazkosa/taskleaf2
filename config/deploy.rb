@@ -4,7 +4,7 @@ lock "~> 3.14.1"
 # Application Name
 set :application, "taskleaf2"
 # Setting Github
-set :repo_url, "git@example.com:kazkosa/taskleaf2.git"
+set :repo_url, "git@github.com:kazkosa/taskleaf2.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
