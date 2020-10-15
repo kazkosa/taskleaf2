@@ -24,7 +24,8 @@ set :deploy_to, "/var/www/taskleaf2"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
-append :linked_files, "config/master.key"
+set :linked_files, 'config/master.key'
+# append :linked_files, "config/master.key"
 
 
 # Default value for linked_dirs is []
