@@ -25,13 +25,13 @@ set :deploy_to, "/var/www/taskleaf2"
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
 # set :linked_files, 'config/master.key'
-set :linked_files, %w{ config/credentials.yml.enc }
+# set :linked_files, %w{ config/credentials.yml.enc }
 # append :linked_files, "config/master.key"
 
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/packs","node_modules", "vendor/bundle", "public/system"
+append :linked_dirs, "config/credentials.yml.enc","log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/packs","node_modules", "vendor/bundle", "public/system"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
