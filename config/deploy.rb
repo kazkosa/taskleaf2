@@ -50,6 +50,9 @@ set :ssh_options, auth_methods: ['publickey'], keys: ['~/.ssh/key_taskleaf2.pem'
 set :rbenv_type, :user
 # ruby version
 set :rbenv_ruby, '2.7.1'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all
 
 
 # プロセス番号を記載したファイルの場所
