@@ -26,7 +26,7 @@ set :deploy_to, "/var/www/taskleaf2"
 # append :linked_files, "config/database.yml"
 # set :linked_files, 'config/master.key'
 set :linked_files, %w{ config/credentials.yml.enc }
-# append :linked_files, "config/master.key"
+append :linked_files, "config/master.key"
 
 
 # Default value for linked_dirs is []
@@ -41,6 +41,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/pack
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
+set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
