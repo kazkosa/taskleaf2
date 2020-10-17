@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trial.name %>
+</p>
+<% if @trial.image.present?%>
+  <%= image_tag url_for(@trial.image.url) %>
+<% end%>
+<%= link_to 'Edit', edit_trial_path(@trial) %> |
+<%= link_to 'Back', trials_path %>
