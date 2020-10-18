@@ -32,7 +32,7 @@ set :deploy_to, "/var/www/taskleaf2"
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
 # set :linked_files, 'config/master.key'
-set :linked_files, %w{ config/credentials.yml.enc }
+# set :linked_files, %w{ config/credentials.yml.enc }
 # append :linked_files, "config/master.key"
 
 
@@ -67,33 +67,33 @@ set :rbenv_ruby, '2.7.1'
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
+デプロイ処理が終わった後、Unicornを再起動するための記述
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
+
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 # after 'deploy:publishing', 'deploy:restart'
 # namespace :deploy do
 #   task :restart do
 #     invoke 'unicorn:restart'
 #   end
+
+#   desc 'upload credentials.yml.enc'
+#   task :upload do
+#     on roles(:app) do |host|
+#       if test "[ ! -d #{shared_path}/config ]"
+#         execute "mkdir -p #{shared_path}/config"
+#       end
+#       upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
+#     end
+#   end
+#   before :starting, 'deploy:upload'
+#   after :finishing, 'deploy:cleanup'
 # end
-
-# デプロイ処理が終わった後、Unicornを再起動するための記述
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-
-  desc 'upload credentials.yml.enc'
-  task :upload do
-    on roles(:app) do |host|
-      if test "[ ! -d #{shared_path}/config ]"
-        execute "mkdir -p #{shared_path}/config"
-      end
-      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
-    end
-  end
-  before :starting, 'deploy:upload'
-  after :finishing, 'deploy:cleanup'
-end
 
 # デプロイの手順の設定（Rails6からyarnインストールが必要に）
 # namespace :deploy do
