@@ -67,7 +67,7 @@ set :rbenv_ruby, '2.7.1'
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
-デプロイ処理が終わった後、Unicornを再起動するための記述
+# デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
